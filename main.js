@@ -13,7 +13,7 @@ Webcam.attach('#camera');
 function take_snapshot()
 {
     Webcam.snap(function(data_uri) {
-        document.getElementById("result").innerHTML = '<img id="captured_img" src="'+data_uri+'"/>';
+        document.getElementById("result").innerHTML = '<img id="captured_image" src="'+data_uri+'"/>';
     });
 }
 
@@ -33,14 +33,15 @@ function check()
 }
 
 function gotResult(error, results)
-{
-    if (error)
-    {
-        console.error(error);
-    }
-
-    else{
+ {
+      if (error)
+     { 
+         console.error(error);
+     } 
+     else 
+     { 
         console.log(results);
-        document.getElementById("object_name").innerHTML = results[0].label;
+
+     document.getElementById("object_name").innerHTML = results[0].label; 
     }
-}
+ }
